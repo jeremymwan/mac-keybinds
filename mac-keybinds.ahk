@@ -25,8 +25,8 @@ Pause::Suspend
 ;     Return
 ; }
 
-!Tab::Send, ^{Tab}
-!+Tab::Send, ^+{Tab}
+!Tab::^Tab
+!+Tab::^+Tab
 
 LCtrl & Tab::AltTab
 
@@ -36,13 +36,14 @@ Send, +{Home}
 Send, {Backspace}
 return
 
-#Backspace::Send, ^{Backspace}
+#Backspace::^Backspace
+; #Delete::^Delete ; TODO
 
-#Left::Send, ^{Left}
-^Left::Send, {Home}
+#Left::^Left
+^Left::Home
 
-#Right::Send, ^{Right}
-^Right::Send, {End}
+#Right::^Right
+^Right::End
 
 #IfWinActive ahk_exe WindowsTerminal.exe
 {
